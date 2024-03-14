@@ -1,0 +1,79 @@
+{
+    "general": {
+        "ok": "Yes",
+        "no": "No",
+        "date": "Date",
+        "route": "Route",
+        "cargo": "Cargo",
+        "pay": "Payment",
+        "customer": "Customer",
+        "firstname": "Last Name",
+        "lastname": "First Name",
+        "patronymic": "Patronymic",
+        "table": {
+            "itemsPerPage": "Items per page"
+        }
+    },
+    "auth": {
+        "registration": "Registration",
+        "register": "Register",
+        "pass": "Password",
+        "confirm": "Confirm Password",
+        "login": "Login",
+        "signin": "Sign In",
+        "email": "Email",
+        "notAuth": "Don't have an account?",
+        "forgotPass": "Forgot Password?",
+        "send_reset_pass": "Send to Email",
+        "logout": "Logout",
+        "wellcome": "Welcome!",
+        "companyInfo": "Company Information",
+        "registerYouself": "Register Yourself and Your Company",
+        "forStart": "To get started, please enter your login and password below",
+        "yourEmail": "Your email",
+        "passwordAtLeast": "At least 8 characters, including letters and numbers"
+    },
+    "appBar": {
+        "menu": {
+            "page1": "Page 1",
+            "page2": "Page 2",
+            "page3": "Page 3"
+        },
+        "userMenu": "User Menu"
+    },
+    "sideMenu": {
+        "employees": "Employees",
+        "shipping": "Shipping",
+        "vehicles": "Vehicles",
+        "documents": "Documents",
+        "counterparties": "Counterparties",
+        "settings": "Settings"
+    },
+    "employees": {
+        "status": {
+            "free": "Free",
+            "flight": "In Flight",
+            "no_works_short": "Not Working",
+            "no_works": "Temporarily Not Working"
+        },
+        "profession": {
+            "driver": "Driver"
+        }
+    },
+    "documents": {
+        "documents": "Documents"
+    },
+    "newAutoCargo": {
+        "addNewCargo": "Add Cargo",
+        "generalInfo": "General Information",
+        "cargoInfo": "Cargo Information",
+        "loadDate": "Load Date:",
+        "departurePoint": "Departure Point:",
+        "destinationPoint": "Destination Point:",
+        "from": "from",
+        "to": "to"
+    },
+    "addNewItems": {
+        "addNewDriver": "Add New Driver"
+    }
+}

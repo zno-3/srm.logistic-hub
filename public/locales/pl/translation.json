@@ -1,0 +1,79 @@
+{
+    "general": {
+        "ok": "Tak",
+        "no": "Nie",
+        "date": "Data",
+        "route": "Trasa",
+        "cargo": "Ładunek",
+        "pay": "Płatność",
+        "customer": "Klient",
+        "firstname": "Nazwisko",
+        "lastname": "Imię",
+        "patronymic": "Imię ojca",
+        "table": {
+            "itemsPerPage": "Rekordów na stronie"
+        }
+    },
+    "auth": {
+        "registration": "Rejestracja",
+        "register": "Zarejestruj się",
+        "pass": "Hasło",
+        "confirm": "Potwierdź hasło",
+        "login": "Login",
+        "signin": "Zaloguj się",
+        "email": "E-mail",
+        "notAuth": "Nie masz konta?",
+        "forgotPass": "Zapomniałeś hasła?",
+        "send_reset_pass": "Wyślij na e-mail",
+        "logout": "Wyloguj się",
+        "wellcome": "Witamy!",
+        "companyInfo": "Informacje o firmie",
+        "registerYouself": "Zarejestruj Siebie i Swoją Firmę",
+        "forStart": "Aby rozpocząć, wprowadź swój login i hasło poniżej",
+        "yourEmail": "Twój adres e-mail",
+        "passwordAtLeast": "Minimum 8 znaków, w tym litery i cyfry"
+    },
+    "appBar": {
+        "menu": {
+            "page1": "Strona 1",
+            "page2": "Strona 2",
+            "page3": "Strona 3"
+        },
+        "userMenu": "Menu użytkownika"
+    },
+    "sideMenu": {
+        "employees": "Pracownicy",
+        "shipping": "Przesyłki",
+        "vehicles": "Pojazdy",
+        "documents": "Obieg dokumentów",
+        "counterparties": "Kontrahenci",
+        "settings": "Ustawienia"
+    },
+    "employees": {
+        "status": {
+            "free": "Wolny",
+            "flight": "W trasie",
+            "no_works_short": "Niepracujący",
+            "no_works": "Tymczasowo niepracujący"
+        },
+        "profession": {
+            "driver": "Kierowca"
+        }
+    },
+    "documents": {
+        "documents": "Dokumenty"
+    },
+    "newAutoCargo": {
+        "addNewCargo": "Dodaj ładunek",
+        "generalInfo": "Informacje ogólne",
+        "cargoInfo": "Informacje o ładunku",
+        "loadDate": "Data załadunku:",
+        "departurePoint": "Miejsce załadunku:",
+        "destinationPoint": "Miejsce docelowe:",
+        "from": "od",
+        "to": "do"
+    },
+    "addNewItems": {
+        "addNewDriver": "Dodaj nowego kierowcę"
+    }
+}

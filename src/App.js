@@ -1,24 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter } from "react-router-dom";
+import AppRouter from "./components/AppRouter.js";
+import { ThemeProvider } from "@mui/material/styles";
+import  AuthProvider from "react-auth-kit";
+import createStore from "react-auth-kit/createStore";
+import theme from "./theme.js";
 
-function App() {
+  const store = createStore({
+    authName: "_auth",
+    authType: "localstorage",
+    cookieDomain: window.location.hostname,
+    cookieSecure: window.location.protocol === 'https:'
+  });
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <AuthProvider store={store}>
+      <ThemeProvider theme={theme}>
+        <BrowserRouter>
+          <AppRouter />
+        </BrowserRouter>
+      </ThemeProvider>
+    </AuthProvider>
   );
 }
 

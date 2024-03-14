@@ -1,0 +1,79 @@
+{
+    "general": {
+        "ok": "Да",
+        "no": "Нет",
+        "date": "Дата",
+        "route": "Маршрут",
+        "cargo": "Груз",
+        "pay": "Оплата",
+        "customer": "Заказчик",
+        "firstname": "Фамилия",
+        "lastname": "Имя",
+        "patronymic": "Отчество",
+        "table": {
+            "itemsPerPage": "Записей на странице"
+        }
+    },
+    "auth": {
+        "registration": "Регистрация",
+        "register": "Зарегистрироваться",
+        "pass": "Пароль",
+        "confirm": "Подтвердите пароль",
+        "login": "Логин",
+        "signin": "Войти",
+        "email": "эл. почта",
+        "notAuth": "Нет аккаунта?",
+        "forgotPass": "Забыли пароль?",
+        "send_reset_pass": "Отправить на почту",
+        "logout": "Выйти",
+        "wellcome": "Добро пожаловать!",
+        "companyInfo": "Информация о компании",
+        "registerYouself": "Зарегистрируйте себя и свою компанию",
+        "forStart": "Для начала введите ваш логин и пароль ниже",
+        "yourEmail": "Ваша электронная почта",
+        "passwordAtLeast": "Минимум 8 символов, включая буквы и цифры"
+    },
+    "appBar": {
+        "menu": {
+            "page1": "Страница 1",
+            "page2": "Страница 2",
+            "page3": "Страница 3"
+        },
+        "userMenu": "Меню пользователя"
+    },
+    "sideMenu": {
+        "employees": "Сотрудники",
+        "shipping": "Перевозки",
+        "vehicles": "Автопарк",
+        "documents": "Документооборот",
+        "counterparties": "Контрагенты",
+        "settings": "Настройки"
+    },
+    "employees": {
+        "status": {
+            "free": "Свободен",
+            "flight": "В рейсе",
+            "no_works_short": "Не работает",
+            "no_works": "Временно не работает"
+        },
+        "profession": {
+            "driver": "Водитель"
+        }
+    },
+    "documents": {
+        "documents": "Документы"
+    },
+    "newAutoCargo": {
+        "addNewCargo": "Добавить груз",
+        "generalInfo": "Общая информация",
+        "cargoInfo": "Информация о грузе",
+        "loadDate": "Дата погрузки:",
+        "departurePoint": "Пункт отправления:",
+        "destinationPoint": "Пункт назначения:",
+        "from": "с",
+        "to": "по"
+    },
+    "addNewItems": {
+        "addNewDriver": "Добавить нового водителя"
+    }
+}
