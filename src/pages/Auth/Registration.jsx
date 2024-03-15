@@ -15,6 +15,7 @@ import {
   TextField,
   Typography,
 } from "@mui/material";
+import axios from "axios";
 import Grid from "@mui/material/Unstable_Grid2"; // Grid version 2
 import { useTranslation } from "react-i18next";
 import { useFormik } from "formik";
@@ -25,16 +26,11 @@ import ReCAPTCHA from "react-google-recaptcha";
 import config from "../../config";
 
 
-
-
 function Registration() {
-
   useEffect(() => {
     recaptchaRef.current.execute();
   }, []);
-
-
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const recaptchaRef = useRef();
 
   const [showPassword, setShowPassword] = useState(false);
@@ -67,7 +63,16 @@ function Registration() {
     validationSchema: validationSchema,
     onSubmit: (values) => {
       if (isVerified) {
-        alert(JSON.stringify(values));
+        values = { ...values, language: i18n.language};
+        console.log(values);
+        axios
+          .post(config.rootUrl + "/sever/auth/create_user.php", values)
+          .then((res) => {
+            console.log(res);
+          })
+          .catch((error) => {
+            console.log(error);
+          });
       } else {
         alert("Please verify reCAPTCHA.");
       }
@@ -226,7 +231,6 @@ function Registration() {
           </FormGroup>
 
           <ReCAPTCHA
-
             sitekey={config.reCapchaKey}
             onChange={hendleCapcha}
             ref={recaptchaRef}
