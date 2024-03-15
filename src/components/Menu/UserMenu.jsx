@@ -44,7 +44,7 @@ function UserMenu() {
 
   return (
     <>
-      {!isAuthenticated ? (
+      {isAuthenticated() ? (
         <Grid container>
           <Grid>
             <Avatar

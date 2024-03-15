@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import useSignIn from "react-auth-kit/hooks/useSignIn";
 import useAuthUser from 'react-auth-kit/hooks/useAuthUser';
 import { Link, useNavigate } from "react-router-dom";
+import useIsAuthenticated from 'react-auth-kit/hooks/useIsAuthenticated'
 import axios from "axios";
 import SwitchLang from "../../components/LangSwitch/LangSwitch";
 import { useFormik } from "formik";
@@ -27,8 +28,13 @@ import config from "../../config";
 //import { showSnackbar } from '../../store/snackbarReduser';
 
 function Auth() {
+
+
+
   const { t } = useTranslation();
   const authUser = useAuthUser();
+  const signIn = useSignIn();
+  const isAuthenticated = useIsAuthenticated();
   const validationSchema = Yup.object().shape({
     email: Yup.string()
       .email(t("validation.invalidEmail"))
@@ -51,16 +57,24 @@ function Auth() {
         .then((res) => {
           console.log(res);
           if (res.status === 200) {
+            console.log(res.data.jwt);
+            const a = signIn({
+              auth: {
+                token: res.data.jwt,
+                type: "Bearer",
+              },
+              userState: {name: 'React User', uid: 123456}
+            })
+
             if (
-              signIn({
-                auth: {
-                  token: res.data.jwt,
-                  type: "Bearer",
-                },
-                userState: res.data.user,
-              })
+a
             ) {
-              console.log(authUser);
+
+console.log(a);
+              setTimeout(() => {
+
+                console.log(isAuthenticated())}, 500);
+
               //navigate("/");
               // Only if you are using refreshToken feature
               // Redirect or do-something
@@ -84,7 +98,7 @@ function Auth() {
   //const dispatch = useDispatch();
 
   const navigate = useNavigate();
-  const signIn = useSignIn();
+
   const [showPassword, setShowPassword] = useState(false);
 
   return (
