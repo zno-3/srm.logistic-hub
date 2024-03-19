@@ -33,7 +33,7 @@ $token = array(
  // Создание jwt
  $jwt = JWT::encode($token, $key, 'HS256');
 
-// Поточний час
+// Поточний час 5
 $current_time = time();
 $expires_in = strtotime('+5 hour', $current_time);
 

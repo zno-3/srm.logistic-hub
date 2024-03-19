@@ -13,13 +13,14 @@ import {
   Typography,
 } from "@mui/material";
 
-import {useLinks} from "./links";
+
 import { useTranslation } from "react-i18next";
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import MenuOpenIcon from "@mui/icons-material/MenuOpen";
 import MenuIcon from "@mui/icons-material/Menu";
 import SwitchLang from "../../LangSwitch/LangSwitch"
+import menuLinks from "./MenuLinks";
 const drawerWidth = 240;
 
 const openedMixin = (theme) => ({
@@ -67,9 +68,7 @@ const MuiDrawer = styled(Drawer, {
     "& .MuiDrawer-paper": closedMixin(theme),
   }),
 }));
-
-
-function SideMenu () {
+function SideMenu() {
   const { t } = useTranslation();
 
   const location = useLocation();
@@ -95,22 +94,21 @@ function SideMenu () {
     setOpenExpand(!openExpand);
   };
 
-  const links = useLinks();
-  console.log(links);
+
 
   return (
     <>
       <MuiDrawer variant="permanent" open={open}>
         <DrawerHeader>
           {open ? (
-            <Typography variant="h5">LogisticHub</Typography>
+            <Typography variant="h5">Site Name</Typography>
           ) : (
-            <Typography variant="h5">LH</Typography>
+            <Typography variant="h5">SN</Typography>
           )}
         </DrawerHeader>
         <Divider sx={{ backgroundColor: "#fff" }} />
         <List>
-          {links.map((link, index) => (
+          {menuLinks.map((link, index) => (
             <ListItem key={index} disablePadding sx={{ display: "block" }}>
               <ListItemButton
                 component={link.to ? Link : "button"}

@@ -6,6 +6,7 @@ import ResetPassword from "./pages/Auth/ResetPassword";
 
 export const authRoutes = [
   { path: "", element: <Dashbord /> },
+  { path: "/dashboard", element: <Dashbord /> },
   { path: "/registration", element: <Registration /> },
   { path: "/login", element: <Login /> },
   { path: "/agreement", element: <Agreement /> },

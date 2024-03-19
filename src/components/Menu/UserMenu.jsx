@@ -82,16 +82,16 @@ function UserMenu() {
               <MenuItem onClick={profileNavigate}>Профіль</MenuItem>
               <MenuItem>Menu Item 2</MenuItem>
               <MenuItem>Налаштування</MenuItem>
-              <MenuItem onClick={() => signOut()}>{t("login.logout")}</MenuItem>
+              <MenuItem onClick={() => signOut()}>{t("auth.logout")}</MenuItem>
             </Menu>
           </Grid>
         </Grid>
       ) : (<Box>
         <Link to="/login" style={{textDecoration: 'none'}}>
-            <Button size="small" variant="outlined">{t("login.login")}</Button>
+            <Button size="small" variant="outlined">{t("auth.login")}</Button>
         </Link>          
         <Link to="/registration" style={{textDecoration: 'none'}}>
-            <Button size="small" variant="outlined">{t("login.registration")}</Button>
+            <Button size="small" variant="outlined">{t("auth.registration")}</Button>
         </Link>
     </Box>)}
     </>
