@@ -1,79 +1,195 @@
 {
     "general": {
-        "ok": "Tak",
-        "no": "Nie",
-        "date": "Data",
-        "route": "Trasa",
-        "cargo": "Ładunek",
-        "pay": "Płatność",
-        "customer": "Klient",
-        "firstname": "Nazwisko",
-        "lastname": "Imię",
-        "patronymic": "Imię ojca",
-        "table": {
-            "itemsPerPage": "Rekordów na stronie"
-        }
+      "ok": "OK",
+      "no": "Nie",
+      "date": "Data",
+      "route": "Trasa",
+      "cargo": "Ładunek",
+      "pay": "Zapłata",
+      "and": "i",
+      "customer": "Klient",
+      "firstname": "Imię",
+      "lastname": "Nazwisko",
+      "surname": "Nazwisko",
+      "continue": "Kontynuuj",
+      "dateOfBirth": "Data urodzenia",
+      "crop": "Przyciąć",
+      "undo": "Cofnij",
+      "redo": "Ponów",
+      "clear": "Wyczyść",
+      "edit": "Edytuj",
+      "delete": "Usuń",
+      "save": "Zapisz",
+      "enter": "Wprowadź",
+      "add": "Dodaj",
+      "added": "Dodane",
+      "addToDraft": "Dodaj do szkicu",
+      "notNecessarily": "Niekoniecznie",
+      "saveChanges": "Zapisz zmiany",
+      "cancel": "Anuluj",
+      "view": "Widok",
+      "dataSaved": "Dane zapisane",
+      "EDRPOU": "EDRPOU",
+      "identNumber": "Numer identyfikacyjny",
+      "companyName": "Nazwa firmy",
+      "vehicle": "Pojazd",
+      "table": {
+        "itemsPerPage": "Pozycji na stronę"
+      },
+      "status": {
+        "total": "Całkowity",
+        "rest": "Odpoczynek",
+        "free": "Wolny",
+        "flight": "W podróży"
+      }
+    },
+    "vehicleTypes": {
+      "truck": "Ciężarówka",
+      "vehicle": "Pojazd",
+      "bus": "Autobus",
+      "cover": "Zakryty",
+      "open": "Otwarty",
+      "tank": "Zbiornik",
+      "petrol": "Cysternę",
+      "gas": "Gazowóz",
+      "milk": "Mleczarnia",
+      "cargo": "Ładunkowy",
+      "cargopass": "Cargo-Pasażer",
+      "pass": "Pasażer"
     },
     "auth": {
-        "registration": "Rejestracja",
-        "register": "Zarejestruj się",
-        "pass": "Hasło",
-        "confirm": "Potwierdź hasło",
-        "login": "Login",
-        "signin": "Zaloguj się",
-        "email": "E-mail",
-        "notAuth": "Nie masz konta?",
-        "forgotPass": "Zapomniałeś hasła?",
-        "send_reset_pass": "Wyślij na e-mail",
-        "logout": "Wyloguj się",
-        "wellcome": "Witamy!",
-        "companyInfo": "Informacje o firmie",
-        "registerYouself": "Zarejestruj Siebie i Swoją Firmę",
-        "forStart": "Aby rozpocząć, wprowadź swój login i hasło poniżej",
-        "yourEmail": "Twój adres e-mail",
-        "passwordAtLeast": "Minimum 8 znaków, w tym litery i cyfry"
+      "registration": "Rejestracja",
+      "register": "Zarejestruj się",
+      "createPass": "Utwórz hasło",
+      "pass": "Hasło",
+      "newPass": "Nowe hasło",
+      "confirm": "Potwierdź hasło",
+      "signin": "Zaloguj się",
+      "backToLogin": "Wróć do logowania",
+      "email": "Email",
+      "yourEmail": "Twój email",
+      "yourPhoneNumber": "Twój numer telefonu",
+      "enterEmail": "Wprowadź email",
+      "notAuth": "Nie masz konta?",
+      "haveAuth": "Masz konto? Zaloguj się",
+      "forgotPass": "Zapomniałeś hasła?",
+      "reset": "Resetuj hasło",
+      "logout": "Wyloguj się",
+      "login": "Logowanie",
+      "enterEmailReset": "Wprowadź swój email. Otrzymasz link do zresetowania hasła",
+      "yourPassword": "Wprowadź swoje hasło",
+      "agree": "Przeczytałem(-am) i zgadzam się z ",
+      "offer": "Umowa oferty publicznej",
+      "privacy": "Polityka prywatności",
+      "resetPassword": "Zresetuj hasło",
+      "installNewPassword": "Ustaw nowe hasło",
+      "resetPasswordSent": "Żądanie zresetowania hasła zostało wysłane na email! Sprawdź swoją pocztę.",
+      "rememberPassword": "Pamiętasz swoje hasło?",
+      "valid_email": "Wprowadź prawidłowy adres email",
+      "notVerify": "Twoje konto zostało utworzone, ale nie możesz się zalogować, dopóki nie zostanie zweryfikowane",
+      "maxAttempts": "Przekroczono maksymalną liczbę prób logowania... odczekaj 5 minut przed ponownym logowaniem",
+      "wrongAuth": "Nieprawidłowa nazwa użytkownika lub hasło",
+      "suspendedAccaunt": "Twoje konto zostało tymczasowo zawieszone",
+      "thanksSignUp": "Dziękujemy za rejestrację! Wkrótce otrzymasz e-mail z potwierdzeniem weryfikacji konta."
     },
-    "appBar": {
-        "menu": {
-            "page1": "Strona 1",
-            "page2": "Strona 2",
-            "page3": "Strona 3"
-        },
-        "userMenu": "Menu użytkownika"
+    "validation": {
+      "atLeast6": "długość pola musi wynosić co najmniej 6 znaków",
+      "fieldRequired": "To pole jest wymagane",
+      "invalidEmail": "Wprowadź prawidłowy email",
+      "passwordMatch": "To pole nie pasuje do wprowadzonego hasła",
+      "agreementRequired": "Musisz przeczytać i zgodzić się na warunki",
+      "phoneValid": "Wprowadź prawidłowy numer telefonu"
     },
-    "sideMenu": {
-        "employees": "Pracownicy",
-        "shipping": "Przesyłki",
-        "vehicles": "Pojazdy",
-        "documents": "Obieg dokumentów",
-        "counterparties": "Kontrahenci",
-        "settings": "Ustawienia"
+    "pages": {
+      "dashboard": "Pulpit",
+      "employees": "Pracownicy",
+      "shippings": "Wysyłki",
+      "documents": "Dokumenty",
+      "counterparties": "Kontrahenci",
+      "assets": "Flota",
+      "collapse": "Zwiń",
+      "drivers": "Kierowcy",
+      "vehicles": "Pojazdy",
+      "trailers": "Przyczepy"
+    },
+    "assets": {
+      "drivers": {
+        "driver": "Kierowca",
+        "addNewDriver": "Dodaj kierowcę",
+        "languages": "Języki obce",
+        "licenses": "Kategorie praw",
+        "messengers": "Komunikatory"
+      },
+      "vehicles": {
+        "addNewVehicle": "Dodaj pojazd",
+        "distanseGauge": "Miernik odległości",
+        "name": "Marka i model ciężarówki",
+        "enterName": "Wprowadź nazwę",
+        "number": "Numer rejestracyjny",
+        "enterNumber": "Wprowadź numer",
+        "produced": "Rok produkcji",
+        "enterProduced": "Wprowadź lub wybierz rok",
+        "volume": "Pojemność silnika, cm3",
+        "enterValue": "Wprowadź wartość",
+        "axis": "Liczba osi"
+      },
+      "trailers": {
+        "addNewTrailer": "Dodaj przyczepę"
+      }
+    },
+    "image": {
+      "edit": "Edytuj obraz",
+      "moreOneFile": "Nie możesz przesłać więcej niż jednego obrazu"
     },
     "employees": {
-        "status": {
-            "free": "Wolny",
-            "flight": "W trasie",
-            "no_works_short": "Niepracujący",
-            "no_works": "Tymczasowo niepracujący"
-        },
-        "profession": {
-            "driver": "Kierowca"
-        }
+      "status": {
+        "flight": "W podróży",
+        "no_works_short": "Nie pracuje",
+        "no_works": "Tymczasowo nie pracuje"
+      }
     },
     "documents": {
-        "documents": "Dokumenty"
+      "documents": "Dokumenty",
+      "addDriverDocs": "Dodaj dokumenty kierowcy",
+      "driverLicence": "Prawo jazdy",
+      "driverPassport": "Paszport kierowcy",
+      "driverAbrodPassport": "Paszport zagraniczny",
+      "other": "Inne"
     },
     "newAutoCargo": {
-        "addNewCargo": "Dodaj ładunek",
-        "generalInfo": "Informacje ogólne",
-        "cargoInfo": "Informacje o ładunku",
-        "loadDate": "Data załadunku:",
-        "departurePoint": "Miejsce załadunku:",
-        "destinationPoint": "Miejsce docelowe:",
-        "from": "od",
-        "to": "do"
+      "addNewCargo": "Dodaj ładunek",
+      "generalInfo": "Informacje ogólne",
+      "cargoInfo": "Informacje o ładunku",
+      "loadDate": "Data załadunku:",
+      "departurePoint": "Punkt wyjazdu:",
+      "destinationPoint": "Punkt docelowy:",
+      "from": "od",
+      "to": "do"
     },
-    "addNewItems": {
-        "addNewDriver": "Dodaj nowego kierowcę"
+    "addNewItem": {
+      "moreOneFileAlert": "Nie możesz przesłać więcej niż jednego pliku",
+      "notAllowedImgType": "Błąd: Można przesyłać tylko pliki w formacie JPEG lub PNG.",
+      "uploadImage": "Prześlij obraz",
+      "dragOrClick": "Przeciągnij obraz lub kliknij, aby dodać"
+    },
+    "errors": {
+      "server": "Błąd serwera.",
+      "invalidToken": "Dostęp zabroniony. Nieprawidłowy token.",
+      "malformedToken": "Dostęp zabroniony. Uszkodzony token.",
+      "noToken": "Dostęp zabroniony. Token nie został dostarczony.",
+      "noEmail": "Nie podano adresu email.",
+      "unicEmail": "Ten email jest już używany",
+      "validEmail": "Nieprawidłowy format email",
+      "uploadImage": "Wystąpił błąd podczas przesyłania plików",
+      "noUserWithEmailFound": "Użytkownik o podanym adresie email nie został znaleziony w systemie"
+    },
+    "languages": {
+      "en": "Angielski",
+      "ua": "Ukraiński",
+      "pl": "Polski",
+      "de": "Niemiecki",
+      "zh": "Chiński",
+      "fr": "Francuski"
     }
-}
+  }
+  

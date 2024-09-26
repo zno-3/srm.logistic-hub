@@ -3,23 +3,34 @@ import PeopleAltOutlinedIcon from "@mui/icons-material/PeopleAltOutlined";
 import LocalShippingOutlinedIcon from "@mui/icons-material/LocalShippingOutlined";
 import HandshakeOutlinedIcon from "@mui/icons-material/HandshakeOutlined";
 import RouteIcon from "@mui/icons-material/Route";
-
+import { useTranslation } from "react-i18next";
+import DashboardIcon from '@mui/icons-material/Dashboard';
 
 const menuLinks = [
   {
-    text: "dashboard",
+    text: "pages.dashboard",
     to: "/dashboard",
-    icon: <RouteIcon color="white" />,
+    icon: <DashboardIcon  color="white" />,
   },
   {
-    text: "First Item",
-    icon: <PeopleAltOutlinedIcon color="white" />,
+    text: "pages.assets",
+    icon: <LocalShippingOutlinedIcon  />,
     expand: [
-      { text: "some 1", to: "/assets/1" },
-      { text: "some 2", to: "/assets/2" },
-      { text: "some 3", to: "/assets/3" },
+      { text: "pages.drivers", to: "/assets/drivers" },
+      { text: "pages.vehicles", to: "/assets/vehicles" },
+      { text: "pages.trailers", to: "/assets/trailers" },
     ],
   },
+  {
+    text: "shippings",
+    to: "/shippings",
+    icon: <RouteIcon />
+  },
+  {
+    text: "fueling",
+    to: "/fueling",
+    icon: <PeopleAltOutlinedIcon  />
+  }
   
 ];
 

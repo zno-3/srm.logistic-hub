@@ -1,17 +1,18 @@
 import { createTheme } from "@mui/material/styles";
 
-const colors = { primary: "#0E1C36" };
+const colors = { primary: "#0E1C36", bgInput: "#F0F0F0" };
 
 const theme = createTheme({
   typography: {
-    fontWeight: 600,
-    //fontFamily: "Raleway, sans-serif",
-    h1: { fontSize: "1.5rem" },
-    h2: { fontSize: "1.3rem" },
-    h3: { fontSize: "1.1rem", fontWeight: 600 },
-    h4: { fontSize: "1rem", fontWeight: 600 },
-    h5: { fontSize: "0.9rem" },
-    h6: { fontSize: "0.7rem", fontWeight: 600 },
+    fontFamily: 'Manrope, Arial, sans-serif',
+    h1: { color: colors.primary, fontSize: "2rem", fontWeight: 600},
+    h2: { fontSize: "1.5rem", fontWeight: 600},
+    h3: { fontSize: "1.3rem", fontWeight: 600 },
+    h4: { fontSize: "1.2rem", fontWeight: 600 },
+    h5: { fontSize: "1.1rem" },
+    h6: { fontSize: "1rem", fontWeight: 600 },
+    body: {  fontWeight: 600 },
+    body2: { fontSize: "0.75rem"},
     caption: {
       fontSize: "0.6rem",
     },
@@ -28,12 +29,12 @@ const theme = createTheme({
       main: "#F7DD72",
       contrastText: "#1F2041", // Колір тексту success
       light: "#152A51",
-      dark: "#d4bd5f",
+      dark: "#F5D451",
     },
 
     button: {
       main: "#F7DD72",
-      contrastText: colors.primary, // Колір тексту success
+      contrastText: '#555', 
       dark: "#c9b45b",
     },
 
@@ -43,12 +44,13 @@ const theme = createTheme({
     },
     grey: {
       main: "#706F6F",
+      dark: "#0E951B",
     },
-    green: {
-      main: "#6BF178", // Задній фон success
+    success: {
+      main: "#0E951B", //  success
       contrastText: "#1F2041", // Колір тексту success
       dark: "#67d372",
-    },
+    },    
     lightgreen: {
       main: "#F3F9F3", // Задній фон success
       contrastText: "#0E951B", // Колір тексту success
@@ -65,20 +67,11 @@ const theme = createTheme({
   },
 
   components: {
-    MuiCssBaseline: {
-      styleOverrides: {
-        body: {
-          margin: 0,
-          padding: 0,
-        },
-      },
-    },
 
     MuiStepIcon: {
       styleOverrides: {
         root: {
           fontSize: '3rem', // Приклад розміру
-          //color: 'green',     // Приклад кольору
           '& svg': {
             fill: 'red',  // Приклад коліру іконки
           },
@@ -119,7 +112,14 @@ const theme = createTheme({
     MuiButton: {
       styleOverrides: {
         root: {
-          margin: "0 4px",
+          textTransform: 'none',
+          margin: "2 10px",
+          fontWeight: 600,
+          fontSize: "16px",
+          boxShadow: "none",
+          '&:hover': {
+            boxShadow: 'none',
+          },
         },
         sizeSmall: {},
       },
@@ -154,7 +154,7 @@ const theme = createTheme({
     MuiAutocomplete: {
       styleOverrides: {
         root: {
-          background: "#f2f2f7",
+          background: colors.bgInput,
           borderRadius: "4px",
           width: "100%",
           input: {
@@ -181,18 +181,30 @@ const theme = createTheme({
             display: "none",
           },
           "& .MuiOutlinedInput-input": {
-            background: "#F2F2F7",
+            background: colors.bgInput,
             height: "10px",
             borderRadius: "4px",
             "&::placeholder": {
-              fontSize: "12px",
-              color: "#0E1C36",
+              fontSize: "14px",
+              color: "#637074",
               opacity: 1,
             },
+          },
+          "& .MuiFilledInput-root": {
+            backgroundColor: colors.bgInput,
           },
         },
       },
     },
+    MuiFilledInput: {
+      styleOverrides:{
+        root:{
+          background: colors.bgInput,
+        }
+      }
+
+    },
+
     MuiSelect: {
       styleOverrides: {
         root: {
@@ -200,7 +212,7 @@ const theme = createTheme({
             display: "none",
           },
           "&.MuiOutlinedInput-root": {
-            background: "#F2F2F7",
+            background: colors.bgInput,
           },
         },
       },
@@ -212,6 +224,17 @@ const theme = createTheme({
         },
       },
     },
+    MuiLink: {
+      styleOverrides: {
+        root: {
+          color: "#0B7A75",
+          textDecoration: 'none'
+        }
+
+          
+
+      },
+    }
   },
 });
 

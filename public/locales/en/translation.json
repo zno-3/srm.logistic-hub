@@ -1,79 +1,195 @@
 {
     "general": {
-        "ok": "Yes",
-        "no": "No",
-        "date": "Date",
-        "route": "Route",
-        "cargo": "Cargo",
-        "pay": "Payment",
-        "customer": "Customer",
-        "firstname": "Last Name",
-        "lastname": "First Name",
-        "patronymic": "Patronymic",
-        "table": {
-            "itemsPerPage": "Items per page"
-        }
+      "ok": "OK",
+      "no": "No",
+      "date": "Date",
+      "route": "Route",
+      "cargo": "Cargo",
+      "pay": "Pay",
+      "and": "and",
+      "customer": "Customer",
+      "firstname": "First Name",
+      "lastname": "Last Name",
+      "surname": "Surname",
+      "continue": "Continue",
+      "dateOfBirth": "Date of Birth",
+      "crop": "Crop",
+      "undo": "Undo",
+      "redo": "Redo",
+      "clear": "Clear",
+      "edit": "Edit",
+      "delete": "Delete",
+      "save": "Save",
+      "enter": "Enter",
+      "add": "Add",
+      "added": "Added",
+      "addToDraft": "Add to Draft",
+      "notNecessarily": "Not Necessarily",
+      "saveChanges": "Save Changes",
+      "cancel": "Cancel",
+      "view": "View",
+      "dataSaved": "Data Saved",
+      "EDRPOU": "EDRPOU",
+      "identNumber": "Identification Number",
+      "companyName": "Company Name",
+      "vehicle": "Vehicle",
+      "table": {
+        "itemsPerPage": "Items per Page"
+      },
+      "status": {
+        "total": "Total",
+        "rest": "Rest",
+        "free": "Free",
+        "flight": "In Flight"
+      }
+    },
+    "vehicleTypes": {
+      "truck": "Truck",
+      "vehicle": "Vehicle",
+      "bus": "Bus",
+      "cover": "Covered",
+      "open": "Open",
+      "tank": "Tank",
+      "petrol": "Petrol Tanker",
+      "gas": "Gas Tanker",
+      "milk": "Milk Tanker",
+      "cargo": "Cargo",
+      "cargopass": "Cargo-Passenger",
+      "pass": "Passenger"
     },
     "auth": {
-        "registration": "Registration",
-        "register": "Register",
-        "pass": "Password",
-        "confirm": "Confirm Password",
-        "login": "Login",
-        "signin": "Sign In",
-        "email": "Email",
-        "notAuth": "Don't have an account?",
-        "forgotPass": "Forgot Password?",
-        "send_reset_pass": "Send to Email",
-        "logout": "Logout",
-        "wellcome": "Welcome!",
-        "companyInfo": "Company Information",
-        "registerYouself": "Register Yourself and Your Company",
-        "forStart": "To get started, please enter your login and password below",
-        "yourEmail": "Your email",
-        "passwordAtLeast": "At least 8 characters, including letters and numbers"
+      "registration": "Registration",
+      "register": "Register",
+      "createPass": "Create Password",
+      "pass": "Password",
+      "newPass": "New Password",
+      "confirm": "Confirm Password",
+      "signin": "Sign In",
+      "backToLogin": "Back to Login",
+      "email": "Email",
+      "yourEmail": "Your Email",
+      "yourPhoneNumber": "Your Phone Number",
+      "enterEmail": "Enter Email",
+      "notAuth": "Don't have an account?",
+      "haveAuth": "Have an account? Sign In",
+      "forgotPass": "Forgot Password?",
+      "reset": "Reset Password",
+      "logout": "Log Out",
+      "login": "Login",
+      "enterEmailReset": "Enter your email. You will receive a link to reset your password",
+      "yourPassword": "Enter Your Password",
+      "agree": "I have read and agree with the ",
+      "offer": "Public Offer Agreement",
+      "privacy": "Privacy Policy",
+      "resetPassword": "Reset Password",
+      "installNewPassword": "Set New Password",
+      "resetPasswordSent": "Password reset request sent to email! Check your email.",
+      "rememberPassword": "Remember your password?",
+      "valid_email": "Enter a valid email address",
+      "notVerify": "Your account has been created, but you cannot log in until it is verified",
+      "maxAttempts": "Maximum login attempts exceeded... please wait 5 minutes before trying again",
+      "wrongAuth": "Incorrect username or password",
+      "suspendedAccaunt": "Your account has been temporarily suspended",
+      "thanksSignUp": "Thank you for registering! You will soon receive an email to confirm your account verification."
     },
-    "appBar": {
-        "menu": {
-            "page1": "Page 1",
-            "page2": "Page 2",
-            "page3": "Page 3"
-        },
-        "userMenu": "User Menu"
+    "validation": {
+      "atLeast6": "field length must be at least 6 characters",
+      "fieldRequired": "This field is required",
+      "invalidEmail": "Enter a valid email",
+      "passwordMatch": "This field does not match the entered password",
+      "agreementRequired": "You must read and agree to the terms",
+      "phoneValid": "Enter a valid phone number"
     },
-    "sideMenu": {
-        "employees": "Employees",
-        "shipping": "Shipping",
-        "vehicles": "Vehicles",
-        "documents": "Documents",
-        "counterparties": "Counterparties",
-        "settings": "Settings"
+    "pages": {
+      "dashboard": "Dashboard",
+      "employees": "Employees",
+      "shippings": "Shippings",
+      "documents": "Documents",
+      "counterparties": "Counterparties",
+      "assets": "Fleet",
+      "collapse": "Collapse",
+      "drivers": "Drivers",
+      "vehicles": "Vehicles",
+      "trailers": "Trailers"
+    },
+    "assets": {
+      "drivers": {
+        "driver": "Driver",
+        "addNewDriver": "Add Driver",
+        "languages": "Languages",
+        "licenses": "License Categories",
+        "messengers": "Messengers"
+      },
+      "vehicles": {
+        "addNewVehicle": "Add Vehicle",
+        "distanseGauge": "Distance Gauge",
+        "name": "Truck Make and Model",
+        "enterName": "Enter Name",
+        "number": "License Plate Number",
+        "enterNumber": "Enter Number",
+        "produced": "Year of Manufacture",
+        "enterProduced": "Enter or Select Year",
+        "volume": "Engine Volume, cc",
+        "enterValue": "Enter Value",
+        "axis": "Number of Axles"
+      },
+      "trailers": {
+        "addNewTrailer": "Add Trailer"
+      }
+    },
+    "image": {
+      "edit": "Edit Image",
+      "moreOneFile": "You cannot upload more than one image"
     },
     "employees": {
-        "status": {
-            "free": "Free",
-            "flight": "In Flight",
-            "no_works_short": "Not Working",
-            "no_works": "Temporarily Not Working"
-        },
-        "profession": {
-            "driver": "Driver"
-        }
+      "status": {
+        "flight": "In Flight",
+        "no_works_short": "Not Working",
+        "no_works": "Temporarily Not Working"
+      }
     },
     "documents": {
-        "documents": "Documents"
+      "documents": "Documents",
+      "addDriverDocs": "Add Driver Documents",
+      "driverLicence": "Driver's License",
+      "driverPassport": "Driver's Passport",
+      "driverAbrodPassport": "International Passport",
+      "other": "Others"
     },
     "newAutoCargo": {
-        "addNewCargo": "Add Cargo",
-        "generalInfo": "General Information",
-        "cargoInfo": "Cargo Information",
-        "loadDate": "Load Date:",
-        "departurePoint": "Departure Point:",
-        "destinationPoint": "Destination Point:",
-        "from": "from",
-        "to": "to"
+      "addNewCargo": "Add Cargo",
+      "generalInfo": "General Information",
+      "cargoInfo": "Cargo Information",
+      "loadDate": "Load Date:",
+      "departurePoint": "Departure Point:",
+      "destinationPoint": "Destination Point:",
+      "from": "from",
+      "to": "to"
     },
-    "addNewItems": {
-        "addNewDriver": "Add New Driver"
+    "addNewItem": {
+      "moreOneFileAlert": "You cannot upload more than one file",
+      "notAllowedImgType": "Error: Only JPEG or PNG files are allowed.",
+      "uploadImage": "Upload Image",
+      "dragOrClick": "Drag image or click to add"
+    },
+    "errors": {
+      "server": "Server Error.",
+      "invalidToken": "Access Denied. Invalid token.",
+      "malformedToken": "Access Denied. Malformed token.",
+      "noToken": "Access Denied. Token not provided.",
+      "noEmail": "Email address not provided.",
+      "unicEmail": "This email is already in use",
+      "validEmail": "Invalid email format",
+      "uploadImage": "Error uploading files",
+      "noUserWithEmailFound": "No user found with this email"
+    },
+    "languages": {
+      "en": "English",
+      "ua": "Ukrainian",
+      "pl": "Polish",
+      "de": "German",
+      "zh": "Chinese",
+      "fr": "French"
     }
-}
+  }
+  

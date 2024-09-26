@@ -1,12 +1,4 @@
-import React, { useState } from "react";
-import useSignIn from "react-auth-kit/hooks/useSignIn";
-import useAuthUser from "react-auth-kit/hooks/useAuthUser";
-import { Link, useNavigate } from "react-router-dom";
-import useIsAuthenticated from "react-auth-kit/hooks/useIsAuthenticated";
-import axios from "axios";
-import SwitchLang from "../../components/LangSwitch/LangSwitch";
-import { useFormik } from "formik";
-import * as Yup from "yup";
+import { useState } from "react";
 import {
   FormHelperText,
   TextField,
@@ -16,22 +8,34 @@ import {
   InputAdornment,
   IconButton,
   FilledInput,
+  Link,
   Box,
+  Paper,
+  Stack,
   Typography,
 } from "@mui/material";
 import Grid from "@mui/material/Unstable_Grid2"; // Grid version 2
 
+import useSignIn from "react-auth-kit/hooks/useSignIn";
+import { useNavigate } from "react-router-dom";
+import SwitchLang from "../../components/General/LangSwitch";
+import { useFormik } from "formik";
+import * as Yup from "yup";
+
+import axios from "axios";
 import { Visibility, VisibilityOff } from "@mui/icons-material";
 import { useTranslation } from "react-i18next";
 import config from "../../config";
-//import { useDispatch } from 'react-redux';
-//import { showSnackbar } from '../../store/snackbarReduser';
+import { useUI } from "../../context/CustomIUProvider";
+import registrationImage from "../../assets/img/registration.jpg";
+import GoogleAuth from "./GoogleAuth";
 
 function Auth() {
   const { t } = useTranslation();
-  const authUser = useAuthUser();
+  const { showSnackbar } = useUI();
   const signIn = useSignIn();
-  const isAuthenticated = useIsAuthenticated();
+  const navigate = useNavigate();
+
   const validationSchema = Yup.object().shape({
     email: Yup.string()
       .email(t("validation.invalidEmail"))
@@ -48,151 +52,172 @@ function Auth() {
     },
     validationSchema: validationSchema,
     onSubmit: (values) => {
-      alert(JSON.stringify(values));
+      console.log(values);
       axios
-        .post(config.rootUrl + "/server/axios/auth/login.php", values)
+        .post(config.serverUrl + "/PHP-Login/login/ajax/checklogin.php", values)
         .then((res) => {
           console.log(res);
-          if (res.status === 200) {
+          const data = res.data.response;
+          if (data.status === true) {
             if (
-              signIn({
+              signIn ({
                 auth: {
-                  token: res.data.jwt,
+                  token: data.token,
                   type: "Bearer",
                 },
-                userState: { name: "React User", uid: 123456 },
+                //refresh: data.token,
+                userState: {
+                  firstname: data.firstname,
+                  lastname: data.lastname,
+                  uid: data.id,
+                  company_id: data.company_id,
+                },
               })
             ) {
-              setTimeout(() => {
-                console.log(isAuthenticated());
-              }, 100);
-
-              //navigate("/");
+              navigate("/dashboard");
               // Only if you are using refreshToken feature
               // Redirect or do-something
             } else {
               //Throw error
-              console.log("Sry error");
+              showSnackbar("Помилка авторизації", "error");
             }
-          }
+          } else showSnackbar(t(data), "error");
         })
         .catch((error) => {
           console.log(error);
-          //dispatch(showSnackbar('Це повідомлення Snackbar Alert', 'info'));
-          //console.log(error);
+          //showSnackbar(t(error.response.data.message), "error");
         });
     },
   });
-
-  const emailError = formik.touched.email && formik.errors.email;
-  const passwordError = formik.touched.password && formik.errors.password;
-
-  //const dispatch = useDispatch();
-
-  const navigate = useNavigate();
+  const errors = {
+    email: formik.touched.email && formik.errors.email,
+    passsword: formik.touched.password && formik.errors.password
+  };
 
   const [showPassword, setShowPassword] = useState(false);
 
   return (
-    <>
-      <Box sx={{ width: "1000px", margin: "0 auto" }}>
-        <Grid sx={{ width: "450px", margin: "0 auto", textAlign: "right" }}>
+    <Stack
+      direction="row"
+      spacing={2}
+      sx={{ width: '100%', p: 2}}
+    >
+      <Paper
+        sx={{
+          display: {
+            xs: "none",
+            md: "block",
+          },
+          width: "50%",
+          borderRadius: "14px",
+          m: 2,
+          background: `url(${registrationImage})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      ></Paper>
+      <Paper
+        sx={{
+          m: 2,
+          width: {
+            xs: "100%",
+            md: "50%",
+          },
+          borderRadius: "14px",
+          background: "#FDFDFD",
+          p: 2,
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
+        <Box xs={12} sx={{ p: 3, position: "absolute", top: 0, right: 0 }}>
           <SwitchLang />
-        </Grid>
-        <Grid
-          container
-          xs={12}
-          md
-          sx={{ width: "450px", margin: "10% auto 0", p: 3 }}
-        >
-          <Typography variant="h3" color="background">
-            {t("auth.wellcome")}
-          </Typography>
-          <Typography color="background">{t("auth.forStart")}</Typography>
+        </Box>
 
-          <form onSubmit={formik.handleSubmit}>
-            <TextField
-              label="e-mail"
-              variant="filled"
-              name="email"
-              value={formik.values.email}
-              autoComplete="off"
-              onChange={(e) => formik.handleChange(e)}
-              onBlur={formik.handleBlur}
-              sx={{ my: 1 }}
-              fullWidth
-              error={!!emailError}
-              helperText={emailError || t("auth.yourEmail")}
-            />
+        <Box sx={{ maxWidth: "320px", m: "0 auto" }}>
+          <Grid container justifyContent="space-between" sx={{ mb: 3 }}>
+            <Typography variant="h1" color="primary">
+              {t("auth.login")}
+            </Typography>
+            <Link
+              href="/registration"
+              variant="body2"
+              sx={{ alignSelf: "flex-end" }}
+            >
+              {t("auth.notAuth")}
+            </Link>
+          </Grid>
 
-            <FormControl fullWidth variant="filled" sx={{ mt: 2 }}>
-              <InputLabel error={!!passwordError} htmlFor="password">
-                {t("auth.pass")}
-              </InputLabel>
-              <FilledInput
-                type={showPassword ? "text" : "password"}
-                name="password"
+          <Grid>
+            <form onSubmit={formik.handleSubmit}>
+              <TextField
+                label={t("auth.yourEmail")}
+                variant="filled"
+                name="email"
+                value={formik.values.email}
+                autoComplete="off"
                 onChange={(e) => formik.handleChange(e)}
                 onBlur={formik.handleBlur}
-                error={!!passwordError}
-                autoComplete="off"
-                endAdornment={
-                  <InputAdornment position="end">
-                    <IconButton
-                      aria-label="toggle password visibility"
-                      onClick={() => setShowPassword(!showPassword)}
-                      edge="end"
-                    >
-                      {showPassword ? <VisibilityOff /> : <Visibility />}
-                    </IconButton>
-                  </InputAdornment>
-                }
+                sx={{ my: 1 }}
+                fullWidth
+                error={!!errors.email}
+                helperText={errors.email}
               />
 
-              <FormHelperText error={passwordError}>
-                {passwordError || t("auth.yourPassword")}
-              </FormHelperText>
-            </FormControl>
-            <Grid sx={{ textAlign: "right", mt: 2 }}>
-              <Typography
-                color="primary"
-                sx={{ fontSize: "1.2em" }}
-                component={Link}
-                to={"/reset-password"}
-              >
-                {t("auth.forgotPass")}
-              </Typography>
-            </Grid>
-            <Grid sx={{ textAlign: "center" }}>
-              <Button
-                type="submit"
-                variant="contained"
-                color="primary"
-                sx={{ px: 8, my: 4 }}
-              >
-                {t("auth.signin")}
-              </Button>
-            </Grid>
-            <Grid xs={12}>
-              <Grid sx={{ display: "flex", justifyContent: "center" }}>
-                <Typography sx={{ fontSize: "1.2em" }}>
-                  {" "}
-                  {t("auth.notAuth")}
-                </Typography>
-                <Typography
-                  sx={{ fontSize: "1.2em", ml: 1 }}
-                  color="primary"
-                  component={Link}
-                  to={"/registration"}
+              <FormControl fullWidth variant="filled" sx={{ mt: 2 }}>
+                <InputLabel error={!!errors.password} htmlFor="password">
+                  {t("auth.pass")}
+                </InputLabel>
+                <FilledInput
+                  type={showPassword ? "text" : "password"}
+                  name="password"
+                  onChange={(e) => formik.handleChange(e)}
+                  onBlur={formik.handleBlur}
+                  error={!!errors.password}
+                  autoComplete="off"
+                  endAdornment={
+                    <InputAdornment position="end">
+                      <IconButton
+                        aria-label="toggle password visibility"
+                        onClick={() => setShowPassword(!showPassword)}
+                        edge="end"
+                      >
+                        {showPassword ? <VisibilityOff /> : <Visibility />}
+                      </IconButton>
+                    </InputAdornment>
+                  }
+                />
+
+                <FormHelperText error={!!errors.password}>
+                  {errors.password}
+                </FormHelperText>
+              </FormControl>
+              <Grid sx={{ textAlign: "right", mt: 2 }}>
+                <Link
+                  variant="body2"
+                  href="/reset-password"
                 >
-                  {t("auth.register")}
-                </Typography>
+                  {t("auth.forgotPass")}
+                </Link>
               </Grid>
-            </Grid>
-          </form>
-        </Grid>
-      </Box>
-    </>
+              <Grid sx={{ textAlign: "center" }}>
+                <Button
+                  type="submit"
+                  variant="contained"
+                  color="secondary"
+                  fullWidth
+                  sx={{ px: 6, my: 4 }}
+                >
+                  {t("general.continue")}
+                </Button>
+              </Grid>
+            </form>
+            <GoogleAuth />
+          </Grid>
+        </Box>
+      </Paper>
+    </Stack>
   );
 }
 
